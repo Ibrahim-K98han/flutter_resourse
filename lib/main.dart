@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:ostad_flutter/bottom_navigator.dart';
 
+import 'live_class.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -15,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: BottomNavigatorPage()
+      home: LiveClass()
     );
   }
 }
