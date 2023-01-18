@@ -22,7 +22,10 @@ class _BottomNavigatorPageState extends State<BottomNavigatorPage> {
              title: Text('Alert'),
              content: Text('Do you want to delete'),
              actions: [
-               TextButton(onPressed: (){}, child: Text('YES')),
+               TextButton(onPressed: (){
+                 MySnackBar('Delete Successfully', context);
+                 Navigator.pop(context);
+               }, child: Text('YES')),
                TextButton(onPressed: (){
                  Navigator.pop(context);
                }, child: Text('NO')),
@@ -34,11 +37,15 @@ class _BottomNavigatorPageState extends State<BottomNavigatorPage> {
   }
 
   final ButtonStyle buttonStyle = ElevatedButton.styleFrom(
-    padding: EdgeInsets.all(25),
+    padding: EdgeInsets.all(10),
     backgroundColor: Colors.green,
     shape: RoundedRectangleBorder(
       borderRadius: BorderRadius.all(Radius.circular(10))
     )
+  );
+
+  final ButtonStyle formButtonStyle = ElevatedButton.styleFrom(
+      minimumSize: Size(double.infinity, 50)
   );
 
   @override
@@ -166,7 +173,48 @@ class _BottomNavigatorPageState extends State<BottomNavigatorPage> {
                 }, child: Text('Outline Button'))
               ],
             ),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: TextField(
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(),
+                      labelText: 'First Name',
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: TextField(
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(),
+                      labelText: 'Last Name',
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: TextField(
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(),
+                      labelText: 'Email',
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.all(8),
+                  child: ElevatedButton(
+                    onPressed: (){
 
+                    },
+                    child: Text('Submit'),
+                    style: formButtonStyle,
+                  ),
+                )
+              ],
+            )
           ],
         )
     );
