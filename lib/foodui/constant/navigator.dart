@@ -7,14 +7,14 @@ import 'package:ostad_flutter/foodui/food_ui.dart';
 import 'package:ostad_flutter/foodui/profile_screen.dart';
 import 'package:ostad_flutter/foodui/search_screen.dart';
 
-class Navigation extends StatefulWidget {
-  const Navigation({Key? key}) : super(key: key);
+class Navigationn extends StatefulWidget {
+  const Navigationn({Key? key}) : super(key: key);
 
   @override
-  State<Navigation> createState() => _NavigationState();
+  State<Navigationn> createState() => _NavigationnState();
 }
 
-class _NavigationState extends State<Navigation> {
+class _NavigationnState extends State<Navigationn> {
   int index = 0;
   List screen = [
     FoodUi(),
@@ -26,6 +26,7 @@ class _NavigationState extends State<Navigation> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           setState(() {

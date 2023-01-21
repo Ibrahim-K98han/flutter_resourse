@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ostad_flutter/bottom_navigator.dart';
 import 'package:ostad_flutter/foodui/food_ui.dart';
+import 'package:ostad_flutter/foodui/splash_screen.dart';
 import 'package:ostad_flutter/live_class_18_1_23/live_class_18_1_23.dart';
 
 import 'foodui/constant/navigator.dart';
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: Navigation()
+      home: SplashScreen()
     );
   }
 }
