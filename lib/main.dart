@@ -3,6 +3,7 @@ import 'package:ostad_flutter/bottom_navigator.dart';
 import 'package:ostad_flutter/foodui/food_ui.dart';
 import 'package:ostad_flutter/live_class_18_1_23/live_class_18_1_23.dart';
 
+import 'foodui/constant/navigator.dart';
 import 'foodui/recip.dart';
 import 'live_class.dart';
 
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: Recip()
+      home: Navigation()
     );
   }
 }

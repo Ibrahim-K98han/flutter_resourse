@@ -4,6 +4,7 @@ import 'colors.dart';
 
 appbar(){
   return AppBar(
+    automaticallyImplyLeading: false,
     elevation: 0,
     title: Icon(
         Icons.menu,

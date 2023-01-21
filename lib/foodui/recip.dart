@@ -3,6 +3,7 @@ import 'package:ostad_flutter/foodui/constant/colors.dart';
 import 'package:ostad_flutter/foodui/food_ui.dart';
 
 class Recip extends StatelessWidget {
+  Recip({super.key});
   List icon = ['dough-rolling', 'cheese', 'meat', 'sausage'];
   List value = ['250g', '120g', '100g', '50g'];
 
@@ -14,10 +15,12 @@ class Recip extends StatelessWidget {
         child: CustomScrollView(
           slivers: [
             SliverAppBar(
+              automaticallyImplyLeading: false,
+              backgroundColor: Colors.white,
               expandedHeight: 400,
               flexibleSpace: FlexibleSpaceBar(
                 background: Image.asset(
-                  'images/dinner.png',
+                  'images/lunch1.jpg',
                   fit: BoxFit.cover,
                 ),
               ),
@@ -67,7 +70,7 @@ class Recip extends StatelessWidget {
                   radius: 18,
                   child: GestureDetector(
                     onTap: () {
-                      Navigator.of(context).push(
+                      Navigator.of(context).pop(
                         MaterialPageRoute(builder: (BuildContext context) {
                           return FoodUi();
                         }),
@@ -105,34 +108,22 @@ class Recip extends StatelessWidget {
                   Container(
                     width: 33,
                     height: 33,
-                    child: Icon(
-                      Icons.flash_on,
-                      color: Colors.orangeAccent,
-                    ),
+                    child: Image.asset('images/flash.png'),
                   ),
                   Container(
                     width: 33,
                     height: 33,
-                    child: Icon(
-                      Icons.set_meal,
-                      color: Colors.orangeAccent,
-                    ),
+                    child: Image.asset('images/meat.png'),
                   ),
                   Container(
                     width: 33,
                     height: 33,
-                    child: Icon(
-                      Icons.food_bank_rounded,
-                      color: Colors.orangeAccent,
-                    ),
+                    child: Image.asset('images/calories.png'),
                   ),
                   Container(
                     width: 33,
                     height: 33,
-                    child: Icon(
-                      Icons.star,
-                      color: Colors.orangeAccent,
-                    ),
+                    child: Image.asset('images/star.png'),
                   )
                 ],
               ),
@@ -245,7 +236,6 @@ class Recip extends StatelessWidget {
                   ],
                 ),
               ),
-              SizedBox(height: 10,),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 15,vertical: 15),
                 child: Text(

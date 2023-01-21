@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ostad_flutter/foodui/recip.dart';
 import 'constant/app_bar.dart';
 import 'constant/colors.dart';
 
@@ -12,12 +13,12 @@ class FoodUi extends StatefulWidget {
 class _FoodUiState extends State<FoodUi> {
   int indexx = 0;
   List category = ['All', 'Launch', 'Dinner', 'Breackfast'];
-  List categoryname = ['dinner', 'food', 'launch','launch'];
+  List categoryname = ['dinner', 'food', 'launch', 'launch'];
   List food = [
-    ['burger','omlet','grilled wings','grilled ribs'],
-    ['pizza','steak','pasta','burger'],
-    ['burger','omlet','grilled wings','grilled ribs'],
-    ['pizza','steak','pasta','burger'],
+    ['burger', 'omlet', 'grilled wings', 'grilled ribs'],
+    ['pizza', 'steak', 'pasta', 'burger'],
+    ['burger', 'omlet', 'grilled wings', 'grilled ribs'],
+    ['pizza', 'steak', 'pasta', 'burger'],
   ];
 
   @override
@@ -113,73 +114,88 @@ class _FoodUiState extends State<FoodUi> {
             padding: EdgeInsets.symmetric(horizontal: 15, vertical: 20),
             sliver: SliverGrid(
               delegate: SliverChildBuilderDelegate((context, index) {
-                return Container(
-                  decoration: BoxDecoration(
-                      color: Colors.white,
-                      boxShadow: [
-                        BoxShadow(
-                            color: Color.fromARGB(255, 185, 185, 185),
-                            offset: Offset(1, 2),
-                            blurRadius: 15)
-                      ],
-                      borderRadius: BorderRadius.circular(20)),
-                  child: Column(
-                    children: [
-                      SizedBox(
-                        height: 10,
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(right: 14),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: [Icon(Icons.favorite_border)],
+                return GestureDetector(
+                  onTap: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (BuildContext context) => Recip()));
+                  },
+                  child: Container(
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        boxShadow: [
+                          BoxShadow(
+                              color: Color.fromARGB(255, 185, 185, 185),
+                              offset: Offset(1, 2),
+                              blurRadius: 15)
+                        ],
+                        borderRadius: BorderRadius.circular(20)),
+                    child: Column(
+                      children: [
+                        SizedBox(
+                          height: 10,
                         ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 20, vertical: 15),
-                        child: Container(
-                          height: 120,
-                          width: 120,
-                          decoration: BoxDecoration(
-                              image: DecorationImage(
-                                  image: AssetImage(
-                                    'images/${categoryname[index]}.png'),
-                                  fit: BoxFit.cover),
-                              borderRadius: BorderRadius.circular(20)),
+                        Padding(
+                          padding: const EdgeInsets.only(right: 14),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [Icon(Icons.favorite_border)],
+                          ),
                         ),
-                      ),
-                      SizedBox(height: 20,),
-                      Text(
-                        food[indexx][index],
-                      style: TextStyle(
-                        fontSize: 18,
-                        color: font,
-                        fontFamily: 'ro'
-                      ),),
-                      SizedBox(height: 20,),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                          Text('100 min',style: TextStyle(
-                              fontSize: 15,
-                              color: Colors.grey,
-                              fontFamily: 'ro'
-                          ),),
-                          Row(
-                            children: [
-                              Icon(Icons.star,color: mainColor,size: 15,),
-                              Text('4.2',style: TextStyle(
+                        Padding(
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 20, vertical: 15),
+                          child: Container(
+                            height: 120,
+                            width: 120,
+                            decoration: BoxDecoration(
+                                image: DecorationImage(
+                                    image: AssetImage(
+                                        'images/${categoryname[index]}.png'),
+                                    fit: BoxFit.cover),
+                                borderRadius: BorderRadius.circular(20)),
+                          ),
+                        ),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        Text(
+                          food[indexx][index],
+                          style: TextStyle(
+                              fontSize: 18, color: font, fontFamily: 'ro'),
+                        ),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            Text(
+                              '100 min',
+                              style: TextStyle(
                                   fontSize: 15,
                                   color: Colors.grey,
-                                  fontFamily: 'ro'
-                              ),),
-                            ],
-                          )
-                        ],
-                      ),
-
-                    ],
+                                  fontFamily: 'ro'),
+                            ),
+                            Row(
+                              children: [
+                                Icon(
+                                  Icons.star,
+                                  color: mainColor,
+                                  size: 15,
+                                ),
+                                Text(
+                                  '4.2',
+                                  style: TextStyle(
+                                      fontSize: 15,
+                                      color: Colors.grey,
+                                      fontFamily: 'ro'),
+                                ),
+                              ],
+                            )
+                          ],
+                        ),
+                      ],
+                    ),
                   ),
                 );
               }, childCount: 4),
