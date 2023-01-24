@@ -8,6 +8,7 @@ import 'foodui/constant/navigator.dart';
 import 'foodui/recip.dart';
 import 'live_class.dart';
 import 'live_class_21_1_23/live_class.dart';
+import 'live_class_23_1_23/live_class_23_1_23.dart';
 
 void main() {
   runApp(const MyApp());
@@ -23,7 +24,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: LiveClass21_01_23()
+      home: LiveClass23_01_23()
     );
   }
 }
