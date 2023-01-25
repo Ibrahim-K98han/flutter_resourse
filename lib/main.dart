@@ -1,14 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ostad_flutter/bottom_navigator.dart';
-import 'package:ostad_flutter/foodui/food_ui.dart';
-import 'package:ostad_flutter/foodui/splash_screen.dart';
-import 'package:ostad_flutter/live_class_18_1_23/live_class_18_1_23.dart';
-
-import 'foodui/constant/navigator.dart';
-import 'foodui/recip.dart';
-import 'live_class.dart';
-import 'live_class_21_1_23/live_class.dart';
-import 'live_class_23_1_23/live_class_23_1_23.dart';
+import 'live_class_25_1_23/live_class_25_1_23.dart';
 
 void main() {
   runApp(const MyApp());
@@ -24,7 +15,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: LiveClass23_01_23()
+      home: LiveClass25_01_23()
     );
   }
 }
