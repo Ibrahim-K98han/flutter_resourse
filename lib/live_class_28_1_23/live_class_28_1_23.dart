@@ -21,7 +21,7 @@ class LiveClass_28_01_23 extends StatelessWidget {
     // print(size.aspectRatio);
     return Scaffold(
       appBar: AppBar(title: Text('Live Class 28-01-2023'),),
-      body:
+      body:Column()
       // Column(
       //   children: [
       //     Flexible(
