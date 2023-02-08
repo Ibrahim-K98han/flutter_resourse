@@ -7,6 +7,7 @@ import 'live_class_28_1_23/live_class_28_1_23.dart';
 import 'live_class_4_2_23/live_class_4_2_23.dart';
 import 'live_class_6_2_23/live_class_6_2_23.dart';
 import 'live_class_6_2_23/todo_application.dart';
+import 'live_class_8_2_23/live_class_8_2_23.dart';
 
 void main() {
   runApp(const MyApp());
@@ -22,7 +23,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: ToDoList()
+      home: LiveClass8_2_23()
     );
   }
 }
